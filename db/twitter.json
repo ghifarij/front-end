@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Batman",
+      "email": "batman@gmail.com",
+      "password": "batman123"
+    },
+    {
+      "id": "2",
+      "username": "Joker",
+      "email": "clown@gmail.com",
+      "password": "hahaha123"
+    },
+    {
+      "id": "3",
+      "username": "Wanderer",
+      "email": "wanderer@gmail.com",
+      "password": "wawan123!"
+    },
+    {
+      "id": "7e3a",
+      "username": "Wawan",
+      "email": "wawan@gmail.com",
+      "password": "wawan123"
+    },
+    {
+      "id": "11b7",
+      "username": "Ei",
+      "email": "ei@gmail.com",
+      "password": "ei123"
+    },
+    {
+      "id": "1423",
+      "username": "Wolf",
+      "email": "wolf@gmail.com",
+      "password": "wolf123"
+    },
+    {
+      "id": "7e8f",
+      "username": "Sun",
+      "email": "sun@gmail.com",
+      "password": "sun123"
+    }
+  ],
+  "post": [],
+  "comments": []
+}
