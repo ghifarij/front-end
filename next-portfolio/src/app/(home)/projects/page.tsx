@@ -1,5 +1,5 @@
-import ProjectDesc from "../components/projects/projectDesc";
-import ProjectItem from "../components/projects/projectItem";
+import ProjectDesc from "../../../components/projects/projectDesc";
+import ProjectItem from "../../../components/projects/projectItem";
 
 function ProjectsPage() {
   return (

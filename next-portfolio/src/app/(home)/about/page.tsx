@@ -1,6 +1,6 @@
-import AboutComp from "../components/about/aboutComp";
-import DetailsComp from "../components/about/detailsComp";
-import ProfileComp from "../components/about/profileComp";
+import AboutComp from "../../../components/about/aboutComp";
+import DetailsComp from "../../../components/about/detailsComp";
+import ProfileComp from "../../../components/about/profileComp";
 
 function AboutPage() {
   return (

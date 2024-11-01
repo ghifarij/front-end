@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ecommerce from "../../assets/ecommerce.png";
 import weather from "../../assets/weather.jpg";
 import todolist from "../../assets/todolist.png";
@@ -6,7 +7,7 @@ function ProjectItem() {
   return (
     <div className="flex flex-wrap text-white justify-between mx-[100px] my-[20px] gap-[50px]">
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
-        <img
+        <Image
           src={ecommerce}
           alt="ecommerce"
           className="ecommerce p-[10px] w-[500px] h-[225px] object-cover"
@@ -20,7 +21,7 @@ function ProjectItem() {
         </p>
       </div>
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
-        <img
+        <Image
           src={weather}
           alt="weather"
           className="weather p-[10px] w-[500px] h-[225px] object-cover"
@@ -35,7 +36,7 @@ function ProjectItem() {
         </p>
       </div>
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
-        <img
+        <Image
           src={todolist}
           alt="todolist"
           className="todolist p-[10px] w-[500px] h-[225px] object-cover"

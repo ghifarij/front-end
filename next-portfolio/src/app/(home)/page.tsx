@@ -1,5 +1,5 @@
-import DescComp from "../components/home/desc";
-import PicComp from "../components/home/pic";
+import DescComp from "../../components/home/desc";
+import PicComp from "../../components/home/pic";
 
 function HomePage() {
   return (
