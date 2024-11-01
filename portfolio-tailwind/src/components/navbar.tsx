@@ -9,7 +9,16 @@ function Navbar() {
         <img src={batman} alt="batman" />
       </div>
       <NavItem />
-      <button className="text-white m-2 btn btn-outline">Download CV</button>
+      <a
+        href="https://drive.google.com/file/d/1MeOXhwsAd9UhAEW_JjPP_GmIYHHPdYEk/view?usp=sharing"
+        download="afga-cv"
+        target="_blank"
+      >
+        {" "}
+        <button className="text-white m-2 btn btn-outline rounded-3xl">
+          Download CV
+        </button>
+      </a>
     </div>
   );
 }
