@@ -5,9 +5,9 @@ import ProfileComp from "../components/about/profileComp";
 function AboutPage() {
   return (
     <div className="flex flex-col md:flex-row md:flex-wrap md:h-[100vh]">
-      <AboutComp />
       <ProfileComp />
       <DetailsComp />
+      <AboutComp />
     </div>
   );
 }

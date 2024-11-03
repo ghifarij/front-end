@@ -14,26 +14,26 @@ function DetailsComp() {
   };
 
   return (
-    <div className="flex-1 text-white text-left content-center">
-      <div className="font-bold text-3xl my-[20px] ml-[150px] text-yellow-500">
-        Details
+    <div className="flex-1 text-white text-center mt-16">
+      <div className="font-bold text-3xl mb-6 md:ml-20 text-yellow-500">
+        DETAILS
       </div>
-      <div className="my-[10px] ml-[150px]">
+      <div className="my-[10px] md:ml-20">
         <span className="font-medium ">Name:</span>
         <br />
         Bruce Wayne
       </div>
-      <div className="my-[10px] ml-[150px]">
+      <div className="my-[10px] md:ml-20">
         <span className="font-medium">Age:</span>
         <br />
         25 years
       </div>
-      <div className="my-[10px] ml-[150px]">
+      <div className="my-[10px] md:ml-20">
         <span className="font-medium">Location:</span>
         <br />
         The bat cave
       </div>
-      <div className="flex gap-[20px] justify-center my-[20px] text-white">
+      <div className="flex gap-[20px] justify-center my-[20px] md:ml-20">
         <button onClick={githubOnClick}>
           <img
             src={github}
