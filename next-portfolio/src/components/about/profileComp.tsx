@@ -1,5 +1,4 @@
 import Image from "next/image";
-import logo from "../../assets/logo.svg";
 
 function ProfileComp() {
   return (
@@ -11,7 +10,13 @@ function ProfileComp() {
         I am a professional developer
       </div>
       <div className="w-[50%] mx-auto mt-[75px]">
-        <Image src={logo} alt="logo" className="logo" />
+        <Image
+          src={"/logo.svg"}
+          alt="logo"
+          className="logo"
+          width={300}
+          height={300}
+        />
       </div>
     </div>
   );

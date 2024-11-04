@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import AboutComp from "../../../components/about/aboutComp";
 import DetailsComp from "../../../components/about/detailsComp";
 import ProfileComp from "../../../components/about/profileComp";
+
+export const metadata: Metadata = {
+  title: "About Section",
+  description: "About me",
+};
 
 function AboutPage() {
   return (

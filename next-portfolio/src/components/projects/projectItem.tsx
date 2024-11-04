@@ -1,16 +1,15 @@
 import Image from "next/image";
-import ecommerce from "../../assets/ecommerce.png";
-import weather from "../../assets/weather.jpg";
-import todolist from "../../assets/todolist.png";
 
 function ProjectItem() {
   return (
     <div className="flex flex-wrap text-white justify-between mx-[100px] my-[20px] gap-[50px]">
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
         <Image
-          src={ecommerce}
+          src={"/ecommerce.png"}
           alt="ecommerce"
-          className="ecommerce p-[10px] w-[500px] h-[225px] object-cover"
+          className="ecommerce p-[10px] w-[500px] h-[225px]"
+          width={500}
+          height={225}
         />
         <figcaption className="font-medium mb-[5px]">E-Commerce App</figcaption>
         <p className="text-left mx-[20px]">
@@ -22,9 +21,11 @@ function ProjectItem() {
       </div>
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
         <Image
-          src={weather}
+          src={"/weather.jpg"}
           alt="weather"
-          className="weather p-[10px] w-[500px] h-[225px] object-cover"
+          className="weather p-[10px] w-[500px] h-[225px]"
+          width={500}
+          height={225}
         />
         <figcaption className="font-medium mb-[5px]">Weather App</figcaption>
         <p className="text-left mx-[20px]">
@@ -37,9 +38,11 @@ function ProjectItem() {
       </div>
       <div className="bg-[#222831] md:w-[500px] md:h-[400px] border-2 border-solid border-yellow-500 rounded text-center">
         <Image
-          src={todolist}
+          src={"/todolist.png"}
           alt="todolist"
-          className="todolist p-[10px] w-[500px] h-[225px] object-cover"
+          className="todolist p-[10px] w-[500px] h-[225px]"
+          width={500}
+          height={225}
         />
         <figcaption className="font-medium mb-[5px]">To-Do List App</figcaption>
         <p className="text-left mx-[20px]">

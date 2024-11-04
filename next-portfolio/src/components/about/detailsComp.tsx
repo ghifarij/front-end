@@ -1,9 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import github from "../../assets/github.png";
-import linkedin from "../../assets/linkedin.png";
-import instagram from "../../assets/instagram.png";
 
 function DetailsComp() {
   const githubOnClick = () => {
@@ -39,23 +36,29 @@ function DetailsComp() {
       <div className="flex gap-[20px] justify-center my-[20px] text-white">
         <button onClick={githubOnClick}>
           <Image
-            src={github}
+            src={"/github.png"}
             alt="github"
-            className="github w-[25px] h-[25px] "
+            className="github"
+            width={25}
+            height={25}
           />
         </button>
         <button onClick={linkedinOnClick}>
           <Image
-            src={linkedin}
+            src={"/linkedin.png"}
             alt="linkedin"
-            className="linkedin w-[25px] h-[25px] "
+            className="linkedin"
+            width={25}
+            height={25}
           />
         </button>
         <button onClick={instagramOnClick}>
           <Image
-            src={instagram}
+            src={"/instagram.png"}
             alt="instagram"
-            className="instagram w-[25px] h-[25px] "
+            className="instagram "
+            width={25}
+            height={25}
           />
         </button>
       </div>

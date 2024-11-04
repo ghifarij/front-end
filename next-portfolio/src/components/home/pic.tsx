@@ -1,10 +1,15 @@
 import Image from "next/image";
-import logo from "../../assets/logo.svg";
 
 function PicComp() {
   return (
     <div className="rounded-full w-[40%]">
-      <Image src={logo} alt="logo" className="logo" />
+      <Image
+        src={"/logo.svg"}
+        alt="logo"
+        className="logo"
+        width={500}
+        height={500}
+      />
     </div>
   );
 }
