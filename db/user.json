@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Batman",
+      "email": "batman@gmail.com",
+      "password": "batman123"
+    },
+    {
+      "id": "47b0",
+      "username": "Lovemoon",
+      "email": "lovemoon@gmail.com",
+      "password": "lovemoon123"
+    },
+    {
+      "id": "7937",
+      "username": "Wanderer",
+      "email": "wanderer@gmail.com",
+      "password": "wawan123~"
+    },
+    {
+      "id": "1733",
+      "username": "Raiden",
+      "email": "ei@gmail.com",
+      "password": "ei123!"
+    },
+    {
+      "id": "ba54",
+      "username": "Dandandan",
+      "email": "dandandan@gmail.com",
+      "password": "dandandan123"
+    },
+    {
+      "id": "3905",
+      "username": "Aquaman",
+      "email": "aquaman@gmail.com",
+      "password": "aquaman123"
+    }
+  ]
+}
