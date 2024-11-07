@@ -36,13 +36,15 @@ export default async function Home() {
                   />
                 </div>
                 <div className="flex justify-between mx-3 mt-3">
-                  <div className="font-bold text-xl">{item.fields.title}</div>
-                  <div className="text-xs font-light text-gray-600">
-                    {item.fields.date}
+                  <div className="font-bold text-xl line-clamp-2 tracking-tight">
+                    {item.fields.title}
                   </div>
                 </div>
-                <div className="mx-3 text-[#2D527C] font-semibold">
+                <div className="flex justify-between mx-3 text-[#2D527C] font-semibold">
                   {item.fields.category}
+                  <span className="text-xs font-light text-gray-600">
+                    {item.fields.date}
+                  </span>
                 </div>
                 <div className="flex justify-between m-3">
                   <div className="flex">
