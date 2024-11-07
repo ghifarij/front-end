@@ -25,11 +25,16 @@ export default async function Home() {
           return (
             <Link href={`/blog/${item.fields.slug}`}>
               <div className="border shadow-lg rounded-lg">
-                <img
-                  src={item.fields.thumbnail.fields.file.url}
-                  alt="thumbnail"
-                  className="w-96 h-52 object-cover rounded-lg"
-                />
+                <div className="w-96 h-52 relative overflow-hidden rounded-lg">
+                  <Image
+                    src={`https:${item.fields.thumbnail.fields.file.url}`}
+                    alt="thumbnail"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                    className="rounded-lg"
+                  />
+                </div>
                 <div className="flex justify-between mx-3 mt-3">
                   <div className="font-bold text-xl">{item.fields.title}</div>
                   <div className="text-xs font-light text-gray-600">
@@ -41,10 +46,12 @@ export default async function Home() {
                 </div>
                 <div className="flex justify-between m-3">
                   <div className="flex">
-                    <img
-                      src={item.fields.author.fields.avatar.fields.file.url}
+                    <Image
+                      width={40}
+                      height={40}
+                      src={`https:${item.fields.author.fields.avatar.fields.file.url}`}
                       alt="avatar"
-                      className="w-10 h-10 object-cover rounded-full"
+                      className="object-cover rounded-full"
                     />
                     <div className="flex flex-col ml-1 text-sm">
                       <div>{item.fields.author.fields.name}</div>

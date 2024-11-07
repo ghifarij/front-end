@@ -7,6 +7,7 @@ import {
 import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
+import Images from "next/image";
 
 export const generateStaticParams = async () => {
   const blogs: IBlog[] = await getBlogs();
@@ -73,11 +74,15 @@ export default async function BlogDetail({
           <span>|</span>{" "}
           <span className="text-gray-500">{blog.fields.date}</span>
         </div>
-        <img
-          src={blog.fields.thumbnail.fields.file.url}
-          alt="thumbnail"
-          className="w-[500px] h-[275px] object-cover"
-        />
+        <div>
+          <Images
+            src={`https:${blog.fields.thumbnail.fields.file.url}`}
+            alt="thumbnail"
+            width={500}
+            height={275}
+            className="object-cover rounded-lg"
+          />
+        </div>
         <div className="p-5 md:p-0 mt-5 md:w-[500px]">
           {documentToReactComponents(blog.fields.content, options)}
         </div>
