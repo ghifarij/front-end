@@ -43,9 +43,6 @@ export default async function BlogDetail({
 
   const options: Options = {
     renderNode: {
-      [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className="list-decimal">{children}</ol>
-      ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="mb-2">{children}</p>
       ),
