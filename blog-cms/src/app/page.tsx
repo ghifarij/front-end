@@ -21,9 +21,9 @@ export default async function Home() {
         </h1>
       </div>
       <div className="flex flex-wrap gap-5 justify-center md:justify-start mx-8">
-        {data.map((item) => {
+        {data.map((item, idx) => {
           return (
-            <Link href={`/blog/${item.fields.slug}`}>
+            <Link key={idx} href={`/blog/${item.fields.slug}`}>
               <div className="border shadow-lg rounded-lg">
                 <div className="w-96 h-52 relative overflow-hidden rounded-lg">
                   <Image
