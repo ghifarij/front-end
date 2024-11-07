@@ -15,8 +15,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Blog CMS",
+  title: {
+    template: "Blogger | %s",
+    default: "Blogger",
+  },
   description: "Generate blog using contentful CMS",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({

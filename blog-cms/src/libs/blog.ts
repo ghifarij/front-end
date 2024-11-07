@@ -23,5 +23,5 @@ export const getBlogSlug = async (slug: string) => {
   const data = await res.json();
   const result = resolveResponse(data);
 
-  return result;
+  return result[0];
 };
