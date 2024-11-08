@@ -1,4 +1,4 @@
-import { getBlogs, getBlogSlug } from "@/libs/blog";
+import { getBlogRecom, getBlogs, getBlogSlug } from "@/libs/blog";
 import { IBlog } from "@/types/blog";
 import {
   documentToReactComponents,
@@ -9,6 +9,7 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import Images from "next/image";
 import ShareButton from "@/components/share";
+import RecommendationBlog from "@/components/recommendation";
 
 export const generateStaticParams = async () => {
   const blogs: IBlog[] = await getBlogs();
@@ -41,6 +42,7 @@ export default async function BlogDetail({
   params: { slug: string };
 }) {
   const blog: IBlog = await getBlogSlug(params.slug);
+  const blogSide: IBlog[] = await getBlogRecom(params.slug);
 
   const options: Options = {
     renderNode: {
@@ -59,7 +61,7 @@ export default async function BlogDetail({
         </Link>
         <ShareButton slug={blog.fields.slug} />
       </div>
-      <div className="md:flex-[5]">
+      <div className="md:flex-[3]">
         <div className="font-bold text-[#2D527C] text-xl px-5 md:p-0">
           {blog.fields.category}
         </div>
@@ -88,6 +90,18 @@ export default async function BlogDetail({
       </div>
       <div className="md:hidden">
         <ShareButton slug={blog.fields.slug} />
+      </div>
+      <div className="flex-[2] max-md:hidden">
+        <h1 className="uppercase font-semibold md:font-bold mb-2 ml-5 sticky top-20">
+          Rekomendasi
+        </h1>
+        <RecommendationBlog blogs={blogSide} />
+      </div>
+      <div className="md:hidden">
+        <h1 className="uppercase font-semibold md:font-bold mb-2 ml-5 md:mt-0 mt-5 md:sticky md:top-20">
+          Rekomendasi
+        </h1>
+        <RecommendationBlog blogs={blogSide} />
       </div>
     </div>
   );
