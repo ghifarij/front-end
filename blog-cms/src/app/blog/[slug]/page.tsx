@@ -8,6 +8,7 @@ import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import Images from "next/image";
+import ShareButton from "@/components/share";
 
 export const generateStaticParams = async () => {
   const blogs: IBlog[] = await getBlogs();
@@ -56,6 +57,7 @@ export default async function BlogDetail({
           <FaArrowLeft className="w-6 h-6" />
           Kembali
         </Link>
+        <ShareButton slug={blog.fields.slug} />
       </div>
       <div className="md:flex-[5]">
         <div className="font-bold text-[#2D527C] text-xl px-5 md:p-0">
@@ -83,6 +85,9 @@ export default async function BlogDetail({
         <div className="p-5 md:p-0 mt-5 md:w-[500px]">
           {documentToReactComponents(blog.fields.content, options)}
         </div>
+      </div>
+      <div className="md:hidden">
+        <ShareButton slug={blog.fields.slug} />
       </div>
     </div>
   );
