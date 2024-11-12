@@ -9,7 +9,7 @@ export default function CopyButton({ link }: { link: string }) {
   const [copied, setCopied] = useState<boolean>(false);
 
   return (
-    <div className="text-gray-700">
+    <div className="text-gray-700" data-cy="copy-button">
       <button
         onClick={() => {
           copy(link);
@@ -17,7 +17,11 @@ export default function CopyButton({ link }: { link: string }) {
           setTimeout(() => setCopied(false), 3000);
         }}
       >
-        {copied ? <FaCheck /> : <FaLink />}
+        {copied ? (
+          <FaCheck data-cy="check-icon" />
+        ) : (
+          <FaLink data-cy="link-icon" />
+        )}
       </button>
     </div>
   );
