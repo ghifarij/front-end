@@ -1,11 +1,11 @@
 "use client";
 
+import action from "@/app/action";
 import { Field, Form, Formik, FormikProps } from "formik";
-import { Metadata } from "next";
 import * as Yup from "yup";
 
 const RegisterSchema = Yup.object().shape({
-  username: Yup.string().required("username is required"),
+  name: Yup.string().required("name is required"),
   email: Yup.string()
     .email("invalid email format")
     .required("email is required"),
@@ -15,20 +15,22 @@ const RegisterSchema = Yup.object().shape({
 });
 
 interface FormValues {
-  username: string;
+  name: string;
   email: string;
   password: string;
 }
 
 function FormRegister() {
-  const initialValue: FormValues = { username: "", email: "", password: "" };
+  const initialValue: FormValues = { name: "", email: "", password: "" };
 
   const handleAdd = async (user: FormValues) => {
     try {
-      await fetch("http://localhost:2000/users", {
+      await fetch("http://localhost:8000/api/users", {
         method: "POST",
         body: JSON.stringify(user),
+        headers: { "content-type": "application/json" },
       });
+      action("users");
       alert("user berhasil ditambahkan!");
     } catch (err) {
       console.log(err);
@@ -53,19 +55,17 @@ function FormRegister() {
             return (
               <Form>
                 <div>
-                  <label htmlFor="username">Username : </label>
+                  <label htmlFor="name">name : </label>
                   <Field
                     type="text"
-                    name="username"
+                    name="name"
                     onChange={handleChange}
-                    value={values.username}
+                    value={values.name}
                     className="flex justify-start border rounded my-2 p-1 w-full text-black focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Username"
+                    placeholder="name"
                   />
-                  {touched.username && errors.username ? (
-                    <div className="text-red-500 text-xs">
-                      {errors.username}
-                    </div>
+                  {touched.name && errors.name ? (
+                    <div className="text-red-500 text-xs">{errors.name}</div>
                   ) : null}
                 </div>
                 <div>

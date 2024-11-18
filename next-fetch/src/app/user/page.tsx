@@ -1,4 +1,3 @@
-import UserPageClient from "@/components/userClient";
 import UserPageServer from "@/components/userServer";
 import { Metadata } from "next";
 
@@ -11,7 +10,7 @@ export default async function UserPage() {
   return (
     <div className="flex justify-evenly">
       <UserPageServer />
-      <UserPageClient />
+      {/* <UserPageClient /> */}
     </div>
   );
 }
