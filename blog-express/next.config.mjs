@@ -10,6 +10,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.britannica.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.pixabay.com",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
     ],
   },
 };

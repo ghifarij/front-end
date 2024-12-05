@@ -4,6 +4,7 @@ export interface IUser {
   username: string;
   email: string;
   avatar: string;
+  role: "Admin" | "User";
 }
 
 export interface IBlog {
