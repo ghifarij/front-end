@@ -26,6 +26,8 @@ interface FormValues {
   confirmPassword: string;
 }
 
+const base_url = process.env.NEXT_BASE_URL_BE;
+
 export default function RegisterComp() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const initialValue: FormValues = {
@@ -38,7 +40,7 @@ export default function RegisterComp() {
   const handleAdd = async (user: FormValues) => {
     try {
       setIsLoading(true);
-      const response: Response = await fetch("http://localhost:8000/api/auth", {
+      const response: Response = await fetch(`${base_url}/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

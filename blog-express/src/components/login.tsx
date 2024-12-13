@@ -19,6 +19,8 @@ interface FormValues {
   password: string;
 }
 
+const base_url = process.env.NEXT_BASE_URL_BE;
+
 export default function LoginComp() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { setIsAuth, setUser } = useSession();
@@ -31,7 +33,7 @@ export default function LoginComp() {
   const handleLogin = async (user: FormValues) => {
     try {
       setIsLoading(true);
-      const res = await fetch("http://localhost:8000/api/auth/login", {
+      const res = await fetch(`${base_url}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -30,6 +30,8 @@ const AvatarSchema = Yup.object().shape({
     ),
 });
 
+const base_url = process.env.NEXT_BASE_URL_BE;
+
 const EditAvatar = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const initialValues: AvatarFormValues = {
@@ -43,7 +45,7 @@ const EditAvatar = () => {
       if (values.avatar) {
         formData.append("file", values.avatar);
       }
-      const res = await fetch("http://localhost:8000/api/users/avatar-cloud", {
+      const res = await fetch(`${base_url}/users/avatar-cloud`, {
         method: "PATCH",
         body: formData,
         credentials: "include",

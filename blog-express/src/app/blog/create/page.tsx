@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Wrapper from "@/components/wrapper";
 import { BlogInput } from "@/types/blog";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
 import { createSlug } from "@/helpers/createSlug";
 import RichTextEditor from "@/components/form/blog/textEditor";
 import { FieldThumbnail } from "@/components/form/blog/thumbnail";
+import { toast } from "react-toastify";
+import { revalidate } from "@/libs/action";
 
 export const blogSchema = Yup.object({
   title: Yup.string()
@@ -49,7 +50,26 @@ const initialValues: BlogInput = {
 export default function BlogCreatePage() {
   const onCreate = async (data: BlogInput) => {
     try {
-      console.log(data);
+      const formData = new FormData();
+
+      for (let key in data) {
+        const item = data[key as keyof BlogInput];
+        if (item) {
+          formData.append(key, item);
+        }
+      }
+
+      const res = await fetch("https://blogger-be-wine.vercel.app/api/blogs", {
+        method: "POST",
+        body: formData,
+        credentials: "include",
+      });
+
+      const result = await res.json();
+      if (!res.ok) throw result;
+
+      revalidate("blogs");
+      toast.success(result.message);
     } catch (err) {
       console.error(err);
     }
@@ -119,11 +139,11 @@ export default function BlogCreatePage() {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 "
                 >
                   <option value="">~ Pilih Category ~</option>
+                  <option value="Genshin">Genshin</option>
                   <option value="Sport">Sport</option>
                   <option value="Health">Health</option>
                   <option value="Food">Food</option>
                   <option value="Tech">Tech</option>
-                  <option value="Tech">Genshin</option>
                 </Field>
                 <ErrorMessage
                   name="category"

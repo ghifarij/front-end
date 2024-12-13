@@ -1,9 +1,4 @@
 import { IBlog } from "@/types/blog";
-import {
-  documentToReactComponents,
-  Options,
-} from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import Images from "next/image";
@@ -43,14 +38,6 @@ export default async function BlogDetail({
 }) {
   const blog: IBlog = await getBlogSlug(params.slug);
 
-  const options: Options = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="mb-2">{children}</p>
-      ),
-    },
-  };
-
   return (
     <div className="flex flex-col md:flex-row my-12 w-full">
       <div className="flex-[2] max-md:hidden">
@@ -84,7 +71,7 @@ export default async function BlogDetail({
           />
         </div>
         <div className="p-5 md:p-0 mt-5 md:w-[600px]">
-          {documentToReactComponents(blog.content, options)}
+          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
         </div>
       </div>
       <div className="md:hidden">
