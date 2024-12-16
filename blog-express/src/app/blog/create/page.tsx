@@ -47,6 +47,8 @@ const initialValues: BlogInput = {
   thumbnail: "",
 };
 
+const base_url = process.env.NEXT_BASE_URL_BE;
+
 export default function BlogCreatePage() {
   const onCreate = async (data: BlogInput) => {
     try {
@@ -59,7 +61,7 @@ export default function BlogCreatePage() {
         }
       }
 
-      const res = await fetch("https://blogger-be-wine.vercel.app/api/blogs", {
+      const res = await fetch(`${base_url}/blogs`, {
         method: "POST",
         body: formData,
         credentials: "include",
